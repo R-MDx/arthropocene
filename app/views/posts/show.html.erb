@@ -4,7 +4,7 @@
   <%= pluralize @post.comment.size, "comment" %>
 </h2>
 
-<div id="reviews">
+<div id="comments">
   <% if @post.comment.blank? %>
     Be the first to write a comment for <%= @post.title %>
   <% else %>
