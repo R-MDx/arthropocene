@@ -1,7 +1,7 @@
 
 <h1><%= @post.title %></h1>
 <h2>
-  <%= pluralize @restaurant.reviews.size, "comment" %>
+  <%= pluralize @post.comment.size, "comment" %>
 </h2>
 
 <div id="reviews">
