@@ -1,0 +1,15 @@
+<h1><%= post.title %></h1>
+<h2>
+  <%= pluralize post.comments.size, "comment" %>
+</h2>
+
+<div id="comments">
+  <% if post.comments.blank? %>
+    Be the first to write a comment for <%= post.title %>
+  <% else %>
+    <% post.comments.each do |comment| %>
+      <%= render 'comments/show', comment: comment %>
+    <% end %>
+  <% end %>
+</div>
+

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user[:id])
     @post = Post.new(post_params)
     @post.user = @user
 
@@ -23,17 +23,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(current_user.posts[0].id)
     @comment = Comment.new
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find(current_user[:id])
     @post.destroy
   end
 end
