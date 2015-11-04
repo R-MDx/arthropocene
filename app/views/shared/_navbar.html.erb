@@ -1,10 +1,8 @@
-<nav class="navbar-wagon">
+<nav class="navbar-wagon" id="header">
   <div class="container navbar-wagon-container">
-
     <a href="">
       <%= image_tag "" %>
     </a>
-
     <div class="navbar-wagon-pusher"></div>
 
     <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
@@ -48,6 +46,6 @@
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Post stuff"), "/profile", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>

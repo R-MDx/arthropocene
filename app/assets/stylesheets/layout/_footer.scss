@@ -1,10 +1,16 @@
-// Your footer style
-
-#footer {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
+div#siteInfo {
   height: 250px;
   text-align: center;
-  background: rgb(88,81,77);
+  color: white;
+  background-color: rgb(88,81,77);
+
+  span{
+    line-height:125px;
+  }
+
+  div.footerBlocks{
+    vertical-align:middle;
+    display:inline-block;
+  }
 }
+
