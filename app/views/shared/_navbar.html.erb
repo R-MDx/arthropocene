@@ -1,24 +1,29 @@
 <nav class="navbar-wagon">
   <div class="container navbar-wagon-container">
 
-    <a href="">
-      <%= image_tag "logo.png" %>
-    </a>
+
+   <%= link_to "/" do %>
+      <%= image_tag "http://orig12.deviantart.net/18c4/f/2013/272/c/4/white_wolf_png_by_raynexstorm-d6ohk5c.png", class: "navbar-wolf-logo" %>
+    <% end %>
 
     <div class="navbar-wagon-pusher"></div>
 
-    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
+    <form method="get" action="/search" id="search">
+      <input name="q" type="text" size="40" placeholder="Search..." />
+    </form>
+    <!-- <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
     <hr class="hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
           <div class="icon-badge icon-badge-blue">3</div>
+
         </div>
       <% end %>
       <hr>
@@ -45,9 +50,13 @@
         </div>
       </div>
     <% else %>
+
+      <%= link_to t(".posts", default: "Posts"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".Profile", default: "Profile"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-    <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+   <hr>
+    <%# link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>

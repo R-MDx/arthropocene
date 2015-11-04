@@ -2,3 +2,32 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+  body {
+   background-color : #313036;
+  }
+
+ #homepage {
+  position: relative;
+
+  h1 {
+  color: white;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: "Gruppo";
+  }
+
+  p {
+  color: lightgrey;
+  font-size: 20px;
+ }
+}
+
+.post-text {
+  position: center;
+  color: white;
+  padding: 5px;
+  margin: 20px;
+}
+
+
