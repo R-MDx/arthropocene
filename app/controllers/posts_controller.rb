@@ -5,12 +5,6 @@ class PostsController < ApplicationController
     @post.user = @user
 
     if @post.save
-      redirect_to user_path(@user)
-    else
-      render 'users/show'
-    end
-
-    if @post.save
       respond_to do |format|
         format.html { redirect_to user_path(@user) }
         format.js  # <-- will render `app/views/posts/create.js.erb`
@@ -36,8 +30,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(current_user[:id])
+    @post = Post.find(params[:id])
     @post.destroy
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :description, :story)
   end
 end
 
