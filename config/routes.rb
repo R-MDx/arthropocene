@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :comments, only: [ :create, :destroy ]
   end
 
-  get 'profile' => 'users#show'
+  get 'profile' => 'pages#profile'
+  get 'contact' => 'pages#contact'
+  get 'terms-of-use' => 'pages#terms'
+  get 'privacy' => 'pages#privacy'
+  get 'public_posts' => 'pages#public_posts'
 
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

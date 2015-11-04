@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def create
-    @user = User.find(current_user[:id])
+    @user = current_user
     @post = Post.new(post_params)
     @post.user = @user
 
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @user = current_user
   end
 
   def show

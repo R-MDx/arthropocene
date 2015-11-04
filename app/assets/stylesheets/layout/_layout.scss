@@ -1,4 +1,3 @@
-
 html, body {
 
   margin:0;
@@ -9,9 +8,10 @@ html, body {
 #wrapper {
   min-height:100%;
   position:relative;
+  padding:0;
 }
 #header {
-  padding:10px;
+  padding-bottom: 0;
 }
 #content {
   padding-bottom: 350px; /* Height of the footer element */

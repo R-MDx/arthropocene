@@ -1,0 +1,14 @@
+<h1><%= @user.email %></h1>
+
+<div id="user">
+  <% if @user.posts.blank? %>
+    <%= link_to t(".top_call_to_action", default: "Let's add your first post !"), "/posts", class: "navbar-item navbar-button btn" %>
+  <% else %>
+    <% @user.posts.each do |post| %>
+      <%= render 'posts/profileshow', post: post %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
