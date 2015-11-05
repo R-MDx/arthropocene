@@ -17,15 +17,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-  end
+  # def new
+  #   @user = current_user
+  #   @post = Post.new
+  # end
 
   def index
     @user = current_user
-  end
-
-  def show
-    @post = Post.find(current_user.posts[0].id)
+    @post = Post.new
     @comment = Comment.new
   end
 

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :public_posts, :contact, :terms, :privacy]
 
   def home
   end
@@ -9,8 +9,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = User.find(current_user[:id])
-    @post = Post.new
+    @user = current_user
   end
 
   def contact

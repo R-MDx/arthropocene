@@ -1,8 +1,7 @@
-<div class="container">
-  <h1><%= post.title %></h1>
-  <h2><%= post.description %></h2>
-  <h2><%= post.story %></h2>
-  <li id="post-<%= post.id %>">
+<div id="post-<%= post.id %>" class="container">
+    <h1><%= post.title %></h1>
+    <h2><%= post.description %></h2>
+    <h2><%= post.story %></h2>
+
     <%= link_to "Delete Your Post", post_path(post.id), method: :delete, remote: true %>
-  </li>
 </div>

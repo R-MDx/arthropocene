@@ -6,7 +6,7 @@
  * ------------------------------------- */
 
 
-.home-title {
+div.home-title {
   text-align: center;
   line-height: 0.98em;
   color: #aeef33  ;
@@ -31,5 +31,10 @@
   }
 }
 
+div.buttons {
+  padding-top: 20px;
+}
 
-
+#content {
+  padding-bottom: 300px; /* Height of the footer element */
+}

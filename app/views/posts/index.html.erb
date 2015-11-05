@@ -2,14 +2,15 @@
 
 <div id="user">
   <% if @user.posts.blank? %>
-    Let's add your first post !
+    <h2>Let's add your first post !</h2>
     <%= render 'posts/form', user: @user, post: @post %>
   <% else %>
     <% @user.posts.each do |post| %>
-      <%= render 'posts/show', post: post %>
+      <%= render 'posts/show', post: post, comment: @comment %>
     <% end %>
-    <h2>Add another Post</h2>
-    <%= render 'posts/form', user: @user, post: @post %>
+    <div class="col-xs-2 col-xs-offset-5">
+      <%= link_to t(".top_call_to_action", default: "New Post"), posts_path, class: "navbar-item navbar-button btn" %>
+    </div>
   <% end %>
 </div>
 
