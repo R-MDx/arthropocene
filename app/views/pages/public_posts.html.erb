@@ -1,12 +1,14 @@
-<h1>Public Posts</h1>
+<div class="container">
 
-<ul>
+  <h1>Public Posts</h1>
+
   <% @posts.each do |post| %>
-    <li id="post-<%= post.id %>">
-      <%= post.title %>
+    <div id="post-<%= post.id %>" class="col-xs-12">
+      <%= render 'posts/show', post: post, comment: @comment %>
       <% if user_signed_in? && post.user_id == current_user.id %>
         <%= link_to "Delete Your Post", post_path(post.id), method: :delete, remote: true %>
       <% end %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
+

@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def public_posts
     @posts = Post.all
+    @comment = Comment.new
   end
 
   def profile
