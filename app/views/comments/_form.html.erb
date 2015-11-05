@@ -1,4 +1,6 @@
-<%= simple_form_for([ post, comment ], remote: true) do |form| %>
-  <%= form.input :content %>
+<%= simple_form_for([ post, @comment ], remote: true) do |form| %>
+  <%= form.input :content, label: "Write a comment below" %>
+  <%= form.hidden_field :post_id, :value => post.id %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
   <%= form.button :submit %>
 <% end %>
