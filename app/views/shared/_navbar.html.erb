@@ -8,16 +8,14 @@
 
     <div class="navbar-wagon-pusher"></div>
 
-    <form method="get" action="/search" id="search">
-      <input name="q" type="text" size="40" placeholder="Search..." />
-    </form>
+
     <!-- <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form> -->
-    <hr class="hidden-xs hidden-sm">
+  <!--   <hr class="hidden-xs hidden-sm"> -->
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
@@ -26,7 +24,6 @@
 
         </div>
       <% end %>
-      <hr>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -50,13 +47,18 @@
         </div>
       </div>
     <% else %>
+    <div class= "links">
 
       <%= link_to t(".posts", default: "Posts"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".Profile", default: "Profile"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-   <hr>
+    </div>
+   <form method="get" action="/search" id="search">
+      <input name="q" type="text" size="40" placeholder="Search..." />
+    </form>
+
     <%# link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>
