@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @post = Post.new(post_params)
-    @post.user = @user
 
     if @post.save
       respond_to do |format|
@@ -17,10 +16,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # def new
-  #   @user = current_user
-  #   @post = Post.new
-  # end
+  def new
+    @user = current_user.id
+    @post = Post.new
+  end
 
   def index
     @user = current_user

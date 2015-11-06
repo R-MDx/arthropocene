@@ -47,7 +47,7 @@
       <hr>
       <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-item navbar-button btn" %>
       <hr>
-      <%= link_to t(".top_call_to_action", default: "New Post"), posts_path, class: "navbar-item navbar-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-item navbar-button btn" %>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
     <hr>
