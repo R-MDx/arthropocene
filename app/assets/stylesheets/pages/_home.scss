@@ -3,33 +3,49 @@
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
 
-  body {
-   background-color : #313036;
-  }
-
- #homepage {
-  position: relative;
-
-  h1 {
-  color: white;
-  font-size: 50px;
-  text-transform: uppercase;
-  line-height: 200px;
-  font-family: "Gruppo";
-  }
-
-  p {
-  color: lightgrey;
-  font-size: 20px;
-  line-height: 100px;
- }
+body {
+  background-color : #313036;
 }
 
-.post-text {
-  position: center;
-  color: white;
-  padding: 5px;
-  margin: 20px;
+.homepage {
+  &-title {
+    position: relative;
+    text-align: center;
+
+    h1 {
+      color: white;
+      font-size: 50px;
+      text-transform: uppercase;
+      line-height: 200px;
+      font-family: "Gruppo";
+    }
+
+    p {
+      color: lightgrey;
+      font-size: 20px;
+      line-height: 100px;
+    }
+  }
+
+  &-column {
+    opacity: 0.1;
+    height: 100vh;
+    padding: 0;
+
+    h1 {
+      font-size: 1em;
+    }
+
+    .post-frame {
+      padding: 0;
+    }
+
+    &-left {
+
+    }
+
+    &-right {
+
+    }
+  }
 }
-
-
