@@ -5,86 +5,40 @@
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
 
-body {
-  background-color : #313036;
-}
 
-.homepage {
-  &-title {
-    position: relative;
-    text-align: center;
+div.home-title {
+  text-align: center;
+  line-height: 0.98em;
+  color: #aeef33  ;
 
-    h1 {
-      color: white;
-      font-size: 35px;
-      text-transform: uppercase;
-      line-height: 20px;
-      font-family: "Gruppo";
-    }
+  h1 {
+    font-size: 8em;
+    font-weight: bold;
+    position:relative;
 
-    p {
-      color: lightgrey;
-      font-size: 15px;
-      line-height: 20px;
-    }
   }
-
-  &-column {
-    opacity: 0.1;
-    height: 100vh;
-    padding: 0;
-
-    h1 {
-      font-size: 1em;
-    }
-
-    .post-frame {
-      padding: 0;
-    }
-
-    &-left {
-
-    }
-
-    &-right {
-
-    }
+  h1 span{
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background:url('grunge.png');
+  }
+  p {
+    font-size: 2em;
   }
 }
 
-// div.home-title {
-//   text-align: center;
-//   line-height: 0.98em;
-//   color: #aeef33  ;
+div.buttons {
+  padding-top: 20px;
+}
 
-//   h1 {
-//     font-size: 8em;
-//     font-weight: bold;
-//     position:relative;
-
-//   }
-//   h1 span{
-//     position:absolute;
-//     display:block;
-//     top:0;
-//     left:0;
-//     height:100%;
-//     width:100%;
-//     background:url('grunge.png');
-//   }
-//   p {
-//     font-size: 2em;
-//   }
-// }
-
-// div.buttons {
-//   padding-top: 20px;
-// }
-
-// div.back-to-top-nav {
-//   display: none;
-// }
-// #content {
-//   padding-bottom: 300px; /* Height of the footer element */
-// }
+div.back-to-top-nav {
+  display: none;
+}
+#content {
+  padding-bottom: 300px; /* Height of the footer element */
+}
 

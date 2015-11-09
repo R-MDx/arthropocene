@@ -1,5 +1,11 @@
-<div class="container">
-  <h1>Public Posts</h1>
+<h1>Public Posts</h1>
+
+
+<div class="public-posts-column col-xs-3">
+
+</div>
+
+<div class="public-posts col-xs-6">
   <% @posts.each do |post| %>
     <div id="post-<%= post.id %>" class="col-xs-12">
       <%= render 'posts/show', post: post %>
@@ -7,3 +13,6 @@
   <% end %>
 </div>
 
+<div class="public-posts-column col-xs-3">
+
+</div>

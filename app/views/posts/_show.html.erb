@@ -1,25 +1,38 @@
 <div id="post-<%= post.id %>" class="container">
-  <h1><%= post.title %></h1>
-  <h2><%= post.description %></h2>
-  <h2><%= post.story %></h2>
+  <div class="post-frame">
+
+    <div class="post-frame-title">
+      <h1><%= post.title %></h1>
+    </div>
+
+    <div class="post-frame-image">
+      <img src="https://helpx.adobe.com/content/dam/help/en/illustrator/how-to/CC_SaveForWeb_1408x792.jpg" class="post-frame-image-style">
+    </div>
+
+    <div class="post-frame-story">
+      <h2><%= post.description %></h2>
+      <h2><%= post.story %></h2>
+    </div>
+
+    <div class="post-frame-comment">
+      <p><%= pluralize post.comments.size, "comment" %></p>
+      <% if user_signed_in? %>
+        <% if post.comments.blank? && user_signed_in? %>
+          <p>Be the first to leave a comment </p>
+          <%= render 'comments/form', comment: @comment, post: post%>
+        <% else %>
+          <% post.comments.each do |comment| %>
+            <%= render 'comments/show', comment: comment %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
   <% if user_signed_in? %>
     <% if post.user_id == current_user.id %>
       <%= link_to "Delete Your Post", post_path(post.id), method: :delete, remote: true %>
     <% end %>
   <% end %>
-
-  <p><%= pluralize post.comments.size, "comment" %></p>
-
-  <div id="comments">
-    <% if post.comments.blank? && user_signed_in? %>
-      <p>Be the first to leave a comment </p>
-      <%= render 'comments/form', comment: @comment, post: post%>
-    <% else %>
-      <% post.comments.each do |comment| %>
-        <%= render 'comments/show', comment: comment %>
-      <% end %>
-    <% end %>
-  </div>
 </div>
 

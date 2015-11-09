@@ -1,0 +1,46 @@
+body {
+  background-color : #313036;
+}
+
+.public-posts {
+  &-title {
+    position: relative;
+    text-align: center;
+
+    h1 {
+      color: white;
+      font-size: 35px;
+      text-transform: uppercase;
+      line-height: 20px;
+      font-family: "Gruppo";
+    }
+
+    p {
+      color: lightgrey;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  &-column {
+    opacity: 0.1;
+    height: 100vh;
+    padding: 0;
+
+    h1 {
+      font-size: 1em;
+    }
+
+    .post-frame {
+      padding: 0;
+    }
+
+    &-left {
+
+    }
+
+    &-right {
+
+    }
+  }
+}
