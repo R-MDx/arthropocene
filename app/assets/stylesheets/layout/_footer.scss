@@ -1,1 +1,20 @@
-// Your footer style
+div#siteInfo {
+  height: 250px;
+  text-align: center;
+  color: white;
+  background-color: rgb(88,81,77);
+
+  span{
+    line-height:125px;
+  }
+
+  div.footerBlocks{
+    vertical-align:middle;
+    display:inline-block;
+  }
+}
+
+div.back-to-top-nav {
+  text-align: center;
+  padding: 0.5em;
+}

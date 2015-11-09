@@ -1,14 +1,11 @@
 <nav class="navbar-arthropocene">
   <div class="container navbar-arthropocene-container">
 
-
    <%= link_to "/" do %>
       <%= image_tag "http://orig12.deviantart.net/18c4/f/2013/272/c/4/white_wolf_png_by_raynexstorm-d6ohk5c.png", class: "navbar-arthropocene-wolf-logo" %>
     <% end %>
 
     <div class="navbar-arthropocene-pusher"></div>
-
-
     <!-- <form action="" class="navbar-arthropocene-search hidden-xs hidden-sm">
       <input type="text" class="navbar-arthropocene-search-input" placeholder="Search something">
       <button type="submit" class="navbar-arthropocene-search-btn">
@@ -29,13 +26,13 @@
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-arthropocene-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-arthropocene-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to "/profile" do %>
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+              <%= link_to "/posts" do %>
+                <i class="fa fa-sticky-note"></i>  <%= t ".profile", default: "Posts" %>
               <% end %>
             </li>
             <li>
@@ -46,11 +43,15 @@
           </ul>
         </div>
       </div>
+      <hr>
+      <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-item navbar-button btn" %>
+      <hr>
+      <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-item navbar-button btn" %>
     <% else %>
     <div class= "links">
 
-      <%= link_to t(".posts", default: "Posts"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      <%= link_to t(".Profile", default: "Profile"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      <%= link_to t(".Profile", default: "Profile"), profile_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
 
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
     <% end %>
@@ -58,7 +59,5 @@
    <form method="get" action="/search" id="search">
       <input name="q" type="text" size="40" placeholder="Search..." />
     </form>
-
-    <%# link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-arthropocene-item navbar-arthropocene-button btn" %>
   </div>
 </nav>

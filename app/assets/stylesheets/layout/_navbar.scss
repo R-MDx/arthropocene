@@ -16,16 +16,16 @@
      width: 100px;
   }
 
-   &-btn {
-      line-height: 40px;
-      color: #E6E6E6;
-      border: none;
-      background: transparent;
-      position: absolute;
-      right: 14px;
-      top: -2px;
-      z-index: 1;
-    }
+  &-btn {
+    line-height: 40px;
+    color: #E6E6E6;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 14px;
+    top: -2px;
+    z-index: 1;
+  }
 
   &-container {
     display: flex;
@@ -78,15 +78,15 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #D23333;
+    background-color: #aeef33;
     color: white;
     font-size: 14px;
-    border: 2px solid $brand-color;
+    border: 2px solid white;
 
     &:hover {
       color: white;
-      background: $brand-color;
-      border-color: darken($brand-color, 10%);
+      // background: rgb(88,81,77);
+      border-color: #aeef33;
     }
   }
   &-dropdown-menu {
@@ -153,10 +153,8 @@
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
   transition: all 0.7s ease 0s;
-
 }
 
 #search input[type="text"]:focus {
   width: 200px;
-
 }
