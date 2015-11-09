@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(post_params)
 
+
     if @post.save
       flash[:notice] = "Post saved successfully"
       redirect_to posts_path
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user.id
+    @user = current_user
     @post = Post.new
   end
 
