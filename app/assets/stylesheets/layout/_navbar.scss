@@ -12,7 +12,8 @@
   }
 
    &-color-logo {
-    height: 75px;
+    margin-top: 10px;
+    height: 100px;
      width: 100px;
   }
 
@@ -78,7 +79,7 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #aeef33;
+    background-color: #30042C;
     color: white;
     font-size: 14px;
     border: 2px solid white;
@@ -86,10 +87,12 @@
     &:hover {
       color: white;
       // background: rgb(88,81,77);
-      border-color: #aeef33;
+      border-color: #30042C;
     }
   }
   &-dropdown-menu {
+    height: 100px;
+    widht: 100px;
     margin-top: 15px;
     box-shadow: 1px 1px 4px #E6E6E6;
     border-color: #E6E6E6;

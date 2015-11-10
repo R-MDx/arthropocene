@@ -1,5 +1,16 @@
 body {
   background-color : #313036;
+  h1 {
+  text-align: center;
+  line-height: 2em;
+  color: #bebebe  ;
+  font-size: 3em;
+  font-weight: bold;
+  position:relative;
+  background:url('edited.jpg');
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  }
 }
 
 .public-posts {

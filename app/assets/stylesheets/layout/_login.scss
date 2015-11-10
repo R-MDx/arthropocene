@@ -95,18 +95,20 @@ body, input, button {
 
     button {
       margin-top: 20px;
-      background: $button-background-color;
+      background: url('edited.jpg');
+      opactiy: 0.9;
       border: none;
       font-size: 1.6em;
       font-weight: 300;
       padding: 5px 0;
       width: 100%;
       border-radius: 3px;
-      color: lighten($button-background-color, 40%);
-      border-bottom: 4px solid darken($button-background-color, 10%);
+      color: lighten(white, 40%);
+      border-bottom: 4px solid darken(black, 10%);
 
       &:hover {
-        background: tint($button-background-color, 4%);
+        background: url('edited.jpg');
+        opacity: 0.5;
         -webkit-animation: hop 1s;
         animation: hop 1s;
       }
