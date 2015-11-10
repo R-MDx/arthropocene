@@ -1,31 +1,46 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+<div class="login">
+  <div class="heading">
+    <h2>Sign Up</h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <!-- <div class="form-inputs"> -->
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <%= f.input :email, label: false, required: true, autofocus: true, placeholder: "Username or email", class: "string email optional form-control" %>
+        </div>
+
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <%= f.input :password, label: false, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),  placeholder:"Password", class: "password optional form-control" %>
+        </div>
+
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <%= f.input :password_confirmation, label: false, required: true, placeholder: "Password Confirmation", class: "password optional form-control" %>
+        </div>
+      <!-- </div> -->
+      <button type="submit" class="float" name="commit" value="Sign up">Signup</button>
+
+        <%#= f.button :submit, "Sign up"%>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+</div>
 
 <!-- <div class="login">
   <div class="heading">
     <h2>Log in</h2>
     <form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post">
       <input name="utf8" type="hidden" value="✓">
-      <input type="hidden" name="authenticity_token" value="y7xbwh32lYPS97z93e1nw01OjEIQXXuJgjssgNY1vGDlNYyTtGLpZBLuJWoZXZRFeo+VunwtCV696eXVF7m2pA==">
-
+      <input type="hidden" name="authenticity_token" value="y7xbwh32lYPS97z93e1nw01OjEIQXXuJgjssgNY1vGDlNYyTtGLpZBLuJWoZXZRFeo+VunwtCV696eXVF7m2pA=="> -->
+<!--
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
         <input class="string email optional form-control" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" placeholder="Username or email">
-      </div>
-
+      </div> -->
+<!--
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
         <input class="password optional form-control" type="password" name="user[password]" id="user_password" placeholder="Password">
@@ -45,7 +60,6 @@
 
   </div>
   <div class="login-links text-center">
-    <%= render "devise/shared/links" %>
   </div>
-</div>
- -->
+</div> -->
+

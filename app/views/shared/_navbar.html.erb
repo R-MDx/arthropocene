@@ -18,7 +18,7 @@
     <% if user_signed_in? %>
       <div class= "links">
         <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-        <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+        <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-arthropocene-item navbar-arthropocene-link" %>
       </div>
 <!--       <%= link_to "#", class: "navbar-arthropocene-item navbar-arthropocene-link hidden-xs" do %>
         <div class="icon-badge-container">
@@ -36,7 +36,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "/posts" do %>
+              <%= link_to user_posts_path(current_user.id) do %>
                 <i class="fa fa-sticky-note"></i>  <%= t ".profile", default: "Posts" %>
               <% end %>
             </li>

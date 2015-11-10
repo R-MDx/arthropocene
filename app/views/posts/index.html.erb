@@ -1,17 +1,32 @@
-<div id="index" class="container">
+<h1>Your Posts</h1>
+<%= link_to "Create new post", new_user_post_path(current_user.id) %>
+<% if @posts.empty? %>
+  <h2>No posts to display</h2>
+<% else %>
+  <% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <h3><%= post.description %></h3>
+    <p><%= post.story %></p>
+    <%= link_to "Edit Post", edit_user_post_path(current_user.id, post.id) %>
+    <hr/>
+  <% end %>
+<% end %>
+
+<!-- <div id="index" class="container">
   <h1>Your Posts</h1>
 
-  <div id="user">
-    <% if @user.posts.blank? %>
+  <div id="user">s
+    <%# if @user.posts.blank? %>
       <h2>Let's add your first post !</h2>
-      <%= render 'posts/form', user: @user, post: @post %>
-    <% else %>
-      <% @user.posts.each do |post| %>
-        <%= render 'posts/show', post: post, comment: @comment %>
-      <% end %>
+      <%#= render 'posts/form', user: @user, post: @post %>
+    <%# else %>
+      <%# @user.posts.each do |post| %>
+        <%#= render 'posts/show', post: post, comment: @comment %>
+      <%# end %>
       <div class="col-xs-2 col-xs-offset-5">
-        <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-item navbar-button btn" %>
+        <%#= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-item navbar-button btn" %>
       </div>
-    <% end %>
+    <%# end %>
   </div>
 </div>
+ -->
