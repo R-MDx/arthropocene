@@ -1,20 +1,9 @@
 <nav class="navbar-arthropocene">
   <div class="container navbar-arthropocene-container">
-
    <%= link_to "/" do %>
       <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
     <% end %>
-
     <div class="navbar-arthropocene-pusher"></div>
-
-<!--     <form action="" class="navbar-arthropocene-search hidden-xs hidden-sm">
-      <input type="text" class="navbar-arthropocene-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-arthropocene-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-    <hr class="hidden-xs hidden-sm"> -->
-
     <% if user_signed_in? %>
       <div class= "links">
         <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
