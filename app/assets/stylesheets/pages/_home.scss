@@ -13,23 +13,14 @@ div.home-title {
 
   h1 {
     font-size: 8em;
+    font-family: "helvetica";
     font-weight: bold;
     position:relative;
     background:url('edited.jpg');
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
-// https://s-media-cache-ak0.pinimg.com/736x/83/91/dd/8391dda839852f46995b8c1c17197f12.jpg
 
-  // h1 span{
-  //   position:absolute;
-  //   display:block;
-    // top:0;
-    // left:0;
-    // height:100%;
-    // width:100%;
-
-  // }
   p {
     font-size: 2em;
   }
