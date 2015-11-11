@@ -1,0 +1,17 @@
+<div class="public-posts">
+  <div class="public-posts-title">
+    <h1>Public Posts</h1>
+  </div>
+
+  <div class="public-posts-column col-xs-3">
+  </div>
+
+  <div class="col-xs-6">
+    <% @posts.each do |post| %>
+      <%= render 'posts/show', post: post %>
+    <% end %>
+  </div>
+
+  <div class="public-posts-column col-xs-3">
+  </div>
+</div>

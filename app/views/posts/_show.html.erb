@@ -1,0 +1,35 @@
+<div class="post-frame" id="post-<%= post.id %>">
+
+  <div class="post-frame-title">
+    <h1><%= post.title %></h1>
+  </div>
+
+  <%= image_tag post.picture.url(:medium) %>
+
+  <div class="post-frame-story">
+    <h2><%= post.description %></h2>
+    <h2><%= post.story %></h2>
+  </div>
+
+  <div class="post-frame-comment">
+      <% if post.comments.blank? %>
+        <p>Be the first to leave a comment </p>
+      <% else %>
+        <p><%= pluralize post.comments.size, "comment" %></p>
+      <% end %>
+      <% post.comments.each do |comment| %>
+          <%= render 'comments/show', comment: comment %>
+      <% end %>
+      <% if user_signed_in? %>
+        <%= render 'comments/form', comment: @comment, post: post %>
+      <% else %>
+        <%= link_to "Login or register to comment!", new_user_session_path %>
+      <% end %>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <% if post.user_id == current_user.id %>
+    <%= link_to "Delete Your Post", user_post_path(current_user.id, post.id), method: :delete %>
+  <% end %>
+<% end %>

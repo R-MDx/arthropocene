@@ -2,3 +2,60 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+body#home {
+  position: relative;
+  z-index: 1;
+
+  div.home-title {
+  text-align: center;
+  line-height: 2em;
+
+    h1 {
+      font-size: 8em;
+      font-family: "helvetica";
+      font-weight: bold;
+      position:relative;
+      background:url('1edited.jpg');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    p {
+      font-size: 2em;
+      color: white;
+    }
+  }
+
+  div.buttons {
+    text-align: center;
+    padding-top: 20px;
+
+    .shh, a:hover span { display: none }
+    a:hover .shh { display: inline }
+
+    .ssh, a:hover span { display: none }
+    a:hover .shh { display: inline }
+  }
+
+  div.back-to-top {
+    display: none;
+  }
+}
+
+body#home:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+  z-index: -1;
+  background-image: url(milkey.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+

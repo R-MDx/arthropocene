@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body id="home">
+    <div class="home-title col-xs-12">
+      <h1>Arthropocene<span></span></h1>
+      <p>The time we, Humans acknowledge art influence upon us.</p>
+    </div>
+    <% if !user_signed_in? %>
+      <div class="col-xs-6 col-xs-offset-3 buttons">
+        <%= link_to t(".top_call_to_action", default: "
+
+          <span><strong>Belonger</strong></span>
+          <span class='shh'><strong>Hello ! :D</strong></span>".html_safe), new_user_session_path, class: "btn navbar-arthropocene-button" %>
+
+        <%= link_to t(".top_call_to_action", default: "
+
+          <span>Non-<strong>Belonger</strong></span>
+          <span class='shh'><strong>Sign up now !</strong></span>".html_safe), new_user_registration_path, class: "btn navbar-arthropocene-button" %>
+      </div>
+    <% end %>
+  </div>
+</body>

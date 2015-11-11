@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+
+  resources :posts, only: [] do
+    resources :comments, only: [ :create, :destroy ]
+  end
+
+  resources :users, only: [:show, :edit] do
+    resources :posts
+  end
+
+  get 'contact' => 'pages#contact'
+  get 'terms-of-use' => 'pages#terms'
+  get 'privacy' => 'pages#privacy'
+  get 'public_posts' => 'pages#public_posts'
+
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
