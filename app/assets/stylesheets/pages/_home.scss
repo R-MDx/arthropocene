@@ -1,39 +1,55 @@
 /* -------------------------------------
- * Yara if you read this DON'T DELETE IT THANKS !!
-
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
 
+body#home {
+  position: relative;
+  z-index: 1;
 
-div.home-title {
+  div.home-title {
   text-align: center;
   line-height: 2em;
-  color: #bebebe  ;
 
-  h1 {
-    font-size: 8em;
-    font-family: "helvetica";
-    font-weight: bold;
-    position:relative;
-    background:url('edited.jpg');
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    h1 {
+      font-size: 8em;
+      font-family: "helvetica";
+      font-weight: bold;
+      position:relative;
+      background:url('1edited.jpg');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    p {
+      font-size: 2em;
+      color: white;
+    }
   }
 
-  p {
-    font-size: 2em;
+  div.buttons {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  div.back-to-top {
+    display: none;
   }
 }
 
-div.buttons {
-  padding-top: 20px;
-}
-
-div.back-to-top-nav {
-  display: none;
-}
-#content {
-  padding-bottom: 300px; /* Height of the footer element */
+body#home:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+  z-index: -1;
+  background-image: url(milkey.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 

@@ -1,29 +1,16 @@
-body {
-  background-color : #313036;
-  h1 {
-  text-align: center;
-  line-height: 2em;
-  color: #bebebe  ;
-  font-size: 3em;
-  font-weight: bold;
-  position:relative;
-  background:url('edited.jpg');
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  }
-}
-
 .public-posts {
   &-title {
     position: relative;
     text-align: center;
 
     h1 {
-      color: white;
       font-size: 35px;
       text-transform: uppercase;
-      line-height: 20px;
+      font-weight: bold;
       font-family: "Gruppo";
+      background:url('edited.jpg');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
     }
 
     p {
@@ -40,18 +27,6 @@ body {
 
     h1 {
       font-size: 1em;
-    }
-
-    .post-frame {
-      padding: 0;
-    }
-
-    &-left {
-
-    }
-
-    &-right {
-
     }
   }
 }

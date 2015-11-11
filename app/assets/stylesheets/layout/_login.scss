@@ -13,10 +13,6 @@ $button-background-color: #27AE60;
   padding: 0;
 }
 
-body, input, button {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
 @mixin normalize-input {
   display: block;
   width: auto;
@@ -95,7 +91,7 @@ body, input, button {
 
     button {
       margin-top: 20px;
-      background: url('edited.jpg');
+      background: url('1edited.jpg');
       opactiy: 0.9;
       border: none;
       font-size: 1.6em;
@@ -107,7 +103,7 @@ body, input, button {
       border-bottom: 4px solid darken(black, 10%);
 
       &:hover {
-        background: url('edited.jpg');
+        background: url('1edited.jpg');
         opacity: 0.5;
         -webkit-animation: hop 1s;
         animation: hop 1s;

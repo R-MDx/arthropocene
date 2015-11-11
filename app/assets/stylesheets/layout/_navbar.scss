@@ -82,15 +82,14 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #30042C;
+    background-color: transparent;
     color: white;
     font-size: 14px;
-    border: 2px solid white;
+    // border: 2px solid white;
 
     &:hover {
-      color: white;
-      // background: rgb(88,81,77);
-      border-color: #30042C;
+      background-color: white;
+      // border-color: black;
     }
   }
   &-dropdown-menu {
