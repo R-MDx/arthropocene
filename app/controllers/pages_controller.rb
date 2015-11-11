@@ -9,10 +9,6 @@ class PagesController < ApplicationController
     @comment = Comment.new
   end
 
-  def profile
-    @user = current_user
-  end
-
   def contact
   end
 
