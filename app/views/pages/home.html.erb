@@ -5,8 +5,15 @@
     </div>
     <% if !user_signed_in? %>
       <div class="col-xs-6 col-xs-offset-3 buttons">
-        <%= link_to t(".top_call_to_action", default: "<strong>Belonger</strong><strong style="display: none">Sign in</strong>".html_safe), new_user_session_path, class: "btn navbar-arthropocene-button sign_in" %>
-        <%= link_to t(".top_call_to_action", default: "Non-<strong>Belonger</strong>".html_safe), new_user_registration_path, class: "btn navbar-arthropocene-button sign_up" %>
+        <%= link_to t(".top_call_to_action", default: "
+
+          <span><strong>Belonger</strong></span>
+          <span class='shh'><strong>Hello ! :D</strong></span>".html_safe), new_user_session_path, class: "btn navbar-arthropocene-button" %>
+
+        <%= link_to t(".top_call_to_action", default: "
+
+          <span>Non-<strong>Belonger</strong></span>
+          <span class='shh'><strong>Sign up now !</strong></span>".html_safe), new_user_registration_path, class: "btn navbar-arthropocene-button" %>
       </div>
     <% end %>
   </div>

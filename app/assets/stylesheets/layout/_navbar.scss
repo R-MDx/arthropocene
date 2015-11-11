@@ -85,11 +85,11 @@
     background-color: transparent;
     color: white;
     font-size: 14px;
+    -webkit-transition: background-color 0.7s;
+    transition: background-color 0.7s;
     // border: 2px solid white;
-
     &:hover {
       background-color: white;
-      // border-color: black;
     }
   }
   &-dropdown-menu {

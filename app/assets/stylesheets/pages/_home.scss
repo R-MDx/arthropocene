@@ -30,6 +30,12 @@ body#home {
   div.buttons {
     text-align: center;
     padding-top: 20px;
+
+    .shh, a:hover span { display: none }
+    a:hover .shh { display: inline }
+
+    .ssh, a:hover span { display: none }
+    a:hover .shh { display: inline }
   }
 
   div.back-to-top {
