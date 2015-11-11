@@ -4,7 +4,7 @@
     <h1><%= post.title %></h1>
   </div>
 
-  <img src="https://helpx.adobe.com/content/dam/help/en/illustrator/how-to/CC_SaveForWeb_1408x792.jpg" class="post-frame-img">
+  <%= image_tag post.picture.url(:medium) %>
 
   <div class="post-frame-story">
     <h2><%= post.description %></h2>

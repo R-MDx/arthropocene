@@ -5,9 +5,12 @@
 <% else %>
   <% @posts.each do |post| %>
     <h2><%= post.title %></h2>
+    <%= image_tag post.picture.url(:medium) %>
     <h3><%= post.description %></h3>
     <p><%= post.story %></p>
     <%= link_to "Edit Post", edit_user_post_path(current_user.id, post.id) %>
+    <%= link_to "Remove Post", user_post_path(current_user.id, post.id), method: :delete %>
+
     <hr/>
   <% end %>
 <% end %>

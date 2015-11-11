@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :posts, except: [:index, :new, :create, :edit, :update] do
-    resources :comments, only: [ :create, :destroy ]
-  end
+  # resources :posts, except: [:index, :new, :create, :edit, :update] do
+  #   resources :comments, only: [ :create, :destroy ]
+  # end
 
   resources :users, only: [:show] do
-    resources :posts, only: [:index, :new, :create, :edit, :update]
+    resources :posts
   end
 
   get 'profile' => 'pages#profile'

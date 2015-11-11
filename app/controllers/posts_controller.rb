@@ -34,12 +34,14 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:alert] = "Post successfully an•ni•hi•lated!"
+    redirect_to user_posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :story)
+    params.require(:post).permit(:title, :description, :story, :picture)
   end
 end
 
