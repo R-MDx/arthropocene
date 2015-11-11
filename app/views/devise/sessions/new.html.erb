@@ -1,29 +1,23 @@
+
 <div class="login">
   <div class="heading">
-    <h2>Log in</h2>
-    <form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post">
-      <input name="utf8" type="hidden" value="✓">
-      <input type="hidden" name="authenticity_token" value="y7xbwh32lYPS97z93e1nw01OjEIQXXuJgjssgNY1vGDlNYyTtGLpZBLuJWoZXZRFeo+VunwtCV696eXVF7m2pA==">
+    <h2>Login</h2>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input class="string email optional form-control" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" placeholder="Username or email">
+        <%= f.input :email, label: false, required: false, autofocus: true, placeholder:"Username or email", class: "password optional form-control" %>
       </div>
 
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <input class="password optional form-control" type="password" name="user[password]" id="user_password" placeholder="Password">
+        <%= f.input :password, label: false, required: false, placeholder:"Password", class: "password optional form-control" %>
       </div>
 
-      <div class="form-group boolean optional user_remember_me">
-        <div class="checkbox">
-          <input value="0" type="hidden" name="user[remember_me]">
-          <label class="boolean optional" for="user_remember_me">
-          <input class="boolean optional" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">Remember me</label>
-        </div>
-      </div>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
       <button type="submit" class="float" name="commit" value="Log in">Login</button>
-    </form>
+    <% end %>
   </div>
   <div class="login-links text-center">
     <%= render "devise/shared/links" %>
