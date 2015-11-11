@@ -2,13 +2,13 @@
   <h1><%= @user.email %></h1>
 
   <% if @user.posts.blank? %>
-    <%= link_to t(".top_call_to_action", default: "Let's add your first post !"), posts_path, class: "navbar-item navbar-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Let's add your first post !"), new_user_post_path(current_user.id), class: "navbar-item navbar-button btn" %>
   <% else %>
     <% @user.posts.each do |post| %>
-      <%= render 'posts/profileshow', post: post %>
+      <%= render 'posts/post_for_profile', post: post %>
     <% end %>
     <div class="col-xs-2 col-xs-offset-5">
-      <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-item navbar-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-item navbar-button btn" %>
     </div>
   <% end %>
 </div>

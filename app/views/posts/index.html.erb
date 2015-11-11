@@ -1,4 +1,20 @@
-<div id="index" class="container">
+<h1>Your Posts</h1>
+<%= link_to "Create new post", new_user_post_path(current_user.id) %>
+<% if @posts.empty? %>
+  <h2>No posts to display</h2>
+<% else %>
+  <% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <%= image_tag post.picture.url(:medium) %>
+    <h3><%= post.description %></h3>
+    <p><%= post.story %></p>
+    <%= link_to "Edit Post", edit_user_post_path(current_user.id, post.id) %>
+    <%= link_to "Remove Post", user_post_path(current_user.id, post.id), method: :delete %>
+    <hr/>
+  <% end %>
+<% end %>
+
+<!-- <div id="index" class="container">
   <h1>Your Posts</h1>
 
   <div id="user">
@@ -15,3 +31,5 @@
     <% end %>
   </div>
 </div>
+
+ -->

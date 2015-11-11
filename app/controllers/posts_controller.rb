@@ -1,24 +1,7 @@
 class PostsController < ApplicationController
-  def create
-    @user = current_user
-    @post = Post.new(post_params)
 
-
-    if @post.save
-      flash[:notice] = "Post saved successfully"
-      redirect_to posts_path
-    end
-    # if @post.save
-    #   respond_to do |format|
-    #     format.html { redirect_to user_path(@user) }
-    #     format.js  # <-- will render `app/views/posts/create.js.erb`
-    #   end
-    # else
-    #   respond_to do |format|
-    #     format.html { render 'users/show' }
-    #     format.js  # <-- idem
-    #   end
-    # end
+  def index
+    @posts = current_user.posts
   end
 
   def new
@@ -26,21 +9,39 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def index
+  def create
+    @user = current_user.posts.build(post_params)
+    if @user.save
+      flash[:notice] = "Post saved successfully"
+      redirect_to user_posts_path
+    else
+      flash[:alert] = "Error occured while attempting to save post!"
+      redirect_to user_posts_path
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
     @user = current_user
-    @post = Post.new
-    @comment = Comment.new
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+    @post.update(post_params)
+    redirect_to user_posts_path
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:alert] = "Post successfully an•ni•hi•lated!"
+    redirect_to user_posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :story)
+    params.require(:post).permit(:title, :description, :story, :picture)
   end
 end
 

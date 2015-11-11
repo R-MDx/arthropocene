@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :posts do
+  resources :posts, only: [] do
     resources :comments, only: [ :create, :destroy ]
   end
 
-  get 'profile' => 'pages#profile'
+  resources :users, only: [:show, :edit] do
+    resources :posts
+  end
+
   get 'contact' => 'pages#contact'
   get 'terms-of-use' => 'pages#terms'
   get 'privacy' => 'pages#privacy'

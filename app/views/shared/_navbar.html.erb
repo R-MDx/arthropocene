@@ -1,38 +1,31 @@
-<nav class="navbar" id="header">
-  <div class="container navbar-container">
-
-    <a href= "/" >
-      <%= image_tag("icon06-picture.png", size: "45x35", alt: "Frame") %>
-    </a>
-
-    <div class="navbar-pusher"></div>
-
-    <form action="" class="navbar-search hidden-xs hidden-sm">
-      <input type="text" class="navbar-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-    <hr class="hidden-xs hidden-sm">
+<nav class="navbar-arthropocene">
+  <div class="container navbar-arthropocene-container">
+   <%= link_to "/" do %>
+      <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
+    <% end %>
+    <div class="navbar-arthropocene-pusher"></div>
     <% if user_signed_in? %>
-      <%= link_to "", class: "navbar-item navbar-link hidden-xs" do %>
+      <div class= "links">
+        <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+        <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      </div>
+<!--       <%= link_to "#", class: "navbar-arthropocene-item navbar-arthropocene-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
           <div class="icon-badge icon-badge-blue">3</div>
         </div>
-      <% end %>
-      <hr>
-      <div class="navbar-item">
+      <% end %> -->
+      <div class="navbar-arthropocene-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <%= image_tag "colours.png", class: "avatar dropdown-toggle", id: "navbar-arthropocene-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-arthropocene-dropdown-menu">
             <li>
-              <%= link_to "/profile" do %>
+              <%= link_to user_path(current_user.id) do %>
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
               <% end %>
             </li>
             <li>
-              <%= link_to "/posts" do %>
+              <%= link_to user_posts_path(current_user.id) do %>
                 <i class="fa fa-sticky-note"></i>  <%= t ".profile", default: "Posts" %>
               <% end %>
             </li>
@@ -44,14 +37,14 @@
           </ul>
         </div>
       </div>
-      <hr>
-      <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-item navbar-button btn" %>
-      <hr>
-      <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-item navbar-button btn" %>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
-    <hr>
-    <%= link_to t(".top_call_to_action", default: "Explore"), public_posts_path, class: "navbar-item navbar-button btn" %>
+      <div class= "links">
+        <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      </div>
     <% end %>
+   <form method="get" action="/search" id="search">
+      <input name="q" type="text" size="40" placeholder="Search..." />
+    </form>
   </div>
 </nav>
