@@ -2,5 +2,5 @@
   <%= form.input :content, label: "Write a comment below" %>
   <%= form.hidden_field :post_id, :value => post.id %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
-  <%= form.button :submit %>
+  <%= form.button :submit, class: "btn btn-default" %>
 <% end %>

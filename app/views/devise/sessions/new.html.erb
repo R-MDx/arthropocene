@@ -1,25 +1,27 @@
+<div class="login-wrapper">
+  <div class="login">
+    <div class="heading">
+      <h2>Login</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {"autocomplete" => "off"}) do |f| %>
 
-<div class="login">
-  <div class="heading">
-    <h2>Login</h2>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <%= f.input :email, label: false, required: false, autofocus: true, placeholder:"Username or email", class: "password optional form-control" %>
+        </div>
 
-      <div class="input-group input-group-lg">
-        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <%= f.input :email, label: false, required: false, autofocus: true, placeholder:"Username or email", class: "password optional form-control" %>
-      </div>
+        <div class="input-group input-group-lg input-group-last">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <%= f.input :password, label: false, required: false, placeholder:"Password", class: "password optional form-control" %>
+        </div>
 
-      <div class="input-group input-group-lg">
-        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <%= f.input :password, label: false, required: false, placeholder:"Password", class: "password optional form-control" %>
-      </div>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-      <button type="submit" class="float" name="commit" value="Log in">Login</button>
-    <% end %>
-  </div>
-  <div class="login-links text-center">
-    <%= render "devise/shared/links" %>
+        <button type="submit" class="float" name="commit" value="Log in">Login</button>
+      <% end %>
+    </div>
+    <div class="login-links text-center">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
+

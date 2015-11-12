@@ -1,7 +1,18 @@
-<%= simple_form_for([user,post]) do |form| %>
-  <%= form.input :title %>
-  <%= form.input :picture %>
-  <%= form.input :description %>
-  <%= form.input :story %>
-  <%= form.button :submit %>
-<% end %>
+<div class="form-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h1 class="text-center"><%= params[:action] == "new" ? "Create" : "Edit" %> your piece of art</h1>
+
+
+        <%= simple_form_for([user,post]) do |form| %>
+          <%= form.input :title, placeholder: "Depression & Stars" %>
+          <%= form.input :picture %>
+          <%= form.input :description, placeholder: "A telescop built by a psychologist" %>
+          <%= form.input :story, placeholder: "Here is how it begins.."  %>
+          <%= form.button :submit, "Create it buddy", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

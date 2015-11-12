@@ -2,7 +2,15 @@
   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   // background: #27272b;
   transition: all 0.3s ease;
-
+  &-white {
+    background: white;
+    .navbar-arthropocene-item {
+      color: black !important;
+    }
+  }
+  .avatar {
+    width: 60px;
+  }
   &-fixed {
     position: fixed;
     left: 0px;
@@ -12,7 +20,6 @@
   }
 
    &-color-logo {
-    margin: 14px 0 0 8px;
     width: 60px;
   }
 

@@ -8,6 +8,21 @@ $input-color: lighten(#AB9E95, 10%);
 $input-border-color: #5E5165;
 $button-background-color: #27AE60;
 
+
+.login-wrapper{
+
+  background: -webkit-linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* W3C */
+
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,18 +44,26 @@ $button-background-color: #27AE60;
   width: 400px;
   min-height: 400px;
   margin: 2% auto 0 auto;
-
+  // background: linear-gradient(rgba(105, 55, 142, 0.7), rgba(84, 163, 165, 0.3)), asset-url('milkey.jpg');
+  background: transparent;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
   .heading {
     text-align: center;
     margin-top: 1%;
 
     h2 {
-      font-size: 3em;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.7);
+      font-size: 2em;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
       display: inline-block;
       padding-bottom: 5px;
-      text-shadow: 1px 1px 3px $shadow-color;
+      margin-bottom: 30px;
     }
   }
   .checkbox {
@@ -57,10 +80,9 @@ $button-background-color: #27AE60;
   form {
     .input-group {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-      &:last-of-type {
-        border-top: none;
+      &-last {
+        border-bottom: none !important;
       }
 
       span {
@@ -79,23 +101,29 @@ $button-background-color: #27AE60;
       @include normalize-input;
 
       padding: 10px;
-      font-size: 1.6em;
+      font-size: 1.3em;
       width: 100%;
       background: transparent;
-      color: $input-color;
+      color: white;
 
       &:focus {
         border: none;
+        background: transparent;
+      }
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.4);
       }
     }
 
     button {
       margin-top: 20px;
+      margin-bottom: 20px;
       background: url('1edited.jpg');
       opactiy: 0.9;
       border: none;
-      font-size: 1.6em;
-      font-weight: 300;
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 2em;
       padding: 5px 0;
       width: 100%;
       border-radius: 3px;
