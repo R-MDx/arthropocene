@@ -25,7 +25,6 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-position: center;
-    // background-position: -30px;
 
     animation: animatedBackground 120s linear infinite;
   }
@@ -47,11 +46,18 @@
   .home-title {
     h1 {
       font-size: 3em;
-
+      background:url('2edited.jpg');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-position: center;
     }
     p {
       font-size: 1em;
     }
+  }
+  @keyframes animatedBackground {
+    from { background-position: 1100%; }
+    to { background-position: 0%; }
   }
 }
 
