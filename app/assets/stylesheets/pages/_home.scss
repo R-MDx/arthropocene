@@ -8,13 +8,15 @@ body#home {
   z-index: 1;
 
   div.home-title {
-  text-align: center;
-  line-height: 2em;
+    text-align: center;
+    // padding-top: 10px;
+    line-height: 2em;
 
     h1 {
-      font-size: 8em;
+      font-size: 8.6em;
       font-family: "helvetica";
       font-weight: bold;
+      letter-spacing: 3.5px;
       position:relative;
       background:url('1edited.jpg');
       -webkit-text-fill-color: transparent;
@@ -22,7 +24,8 @@ body#home {
     }
 
     p {
-      font-size: 2em;
+      font-size: 1.95em;
+      letter-spacing: 0.8px;
       color: white;
     }
   }
@@ -50,7 +53,7 @@ body#home:before {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: .8;
+  opacity: .85;
   z-index: -1;
   background-image: url(milkey.jpg);
   -webkit-background-size: cover;
