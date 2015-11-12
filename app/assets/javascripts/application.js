@@ -23,5 +23,4 @@ $(document).ready(function(){
     $(this).removeClass(randFilter);
     $(this).removeClass("hovered");
   });
-
 });
