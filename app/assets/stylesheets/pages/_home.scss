@@ -5,7 +5,7 @@
 
 #home {
   height: 100vh;
-  background: linear-gradient(rgba(105, 55, 142, 0.7), rgba(84, 163, 165, 0.3)), asset-url('milkey.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), asset-url('milkey.jpg');
   background-size: cover;
   display: flex;
   justify-content: space-around;
@@ -25,7 +25,9 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-position: center;
-    background-position: -30px;
+    // background-position: -30px;
+
+    animation: animatedBackground 120s linear infinite;
   }
   p {
     font-size: 1.3em;
@@ -35,6 +37,12 @@
     text-shadow: 1px 1px 3px #1D1C27;
   }
 }
+
+@keyframes animatedBackground {
+  from { background-position: 0; }
+  to { background-position: 1500%; }
+}
+
 @media (max-width: 768px) {
   .home-title {
     h1 {
@@ -61,64 +69,3 @@
   font-size: 30px;
   line-height: 80px;
 }
-
-
-// body#home {
-//   position: relative;
-//   z-index: 1;
-
-//   div.home-title {
-//     text-align: center;
-//     // padding-top: 10px;
-//     line-height: 2em;
-
-//     h1 {
-//       font-size: 8.6em;
-//       font-family: "helvetica";
-//       font-weight: bold;
-//       letter-spacing: 3.5px;
-//       position:relative;
-//       background:url('1edited.jpg');
-//       -webkit-text-fill-color: transparent;
-//       -webkit-background-clip: text;
-//     }
-
-//     p {
-//       font-size: 1.95em;
-//       letter-spacing: 0.8px;
-//       color: white;
-//     }
-//   }
-
-//   div.buttons {
-//     text-align: center;
-//     padding-top: 20px;
-
-//     .shh, a:hover span { display: none }
-//     a:hover .shh { display: inline }
-
-//     .ssh, a:hover span { display: none }
-//     a:hover .shh { display: inline }
-//   }
-
-//   div.back-to-top {
-//     display: none;
-//   }
-// }
-
-// body#home:before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   opacity: .85;
-//   z-index: -1;
-//   background-image: url(milkey.jpg);
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
-
