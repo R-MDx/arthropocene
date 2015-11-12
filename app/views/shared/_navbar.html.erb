@@ -3,6 +3,9 @@
    <%= link_to "/" do %>
       <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
     <% end %>
+    <form method="get" action="/search" id="search">
+      <input name="q" type="text" size="40" placeholder="Search..." />
+    </form>
     <div class="navbar-arthropocene-pusher"></div>
     <% if user_signed_in? %>
       <div class= "links">
@@ -43,8 +46,5 @@
         <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
       </div>
     <% end %>
-   <form method="get" action="/search" id="search">
-      <input name="q" type="text" size="40" placeholder="Search..." />
-    </form>
   </div>
 </nav>
