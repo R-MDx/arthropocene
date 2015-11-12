@@ -13,8 +13,7 @@
 
    &-color-logo {
     margin: 14px 0 0 8px;
-    height: 14%;
-    width: 14%
+    width: 60px;
   }
 
   &-btn {
@@ -38,12 +37,18 @@
     align-items: center;
   }
   &-pusher {
-    flex: 1 1 auto;
+    flex: 5 1 auto;
   }
   &-item {
-    flex: 0 1 auto;
+    flex: 1 1 200px;
     cursor: pointer;
     padding: 0 10px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    color: white !important;
+    text-shadow: 1px 0 5px rgba(255, 255, 255, 0.8);
   }
   &-search {
     flex: 0 1 300px;
@@ -139,7 +144,6 @@
 }
 
 #search input[type="text"] {
-  background-color: #393939;
   border: 0 none;
   font: bold 12px Arial,Helvetica,Sans-serif;
   color: #777;
@@ -148,10 +152,6 @@
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
   -webkit-transition: all 0.7s ease 0s;
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
@@ -160,4 +160,9 @@
 
 #search input[type="text"]:focus {
   width: 200px;
+}
+.input-search {
+  outline: none;
+  line-height: 22px;
+  background: white;
 }

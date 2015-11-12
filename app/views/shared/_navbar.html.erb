@@ -1,11 +1,8 @@
-<nav class="navbar-arthropocene">
+<nav class="navbar-arthropocene navbar-arthropocene-fixed">
   <div class="container navbar-arthropocene-container">
    <%= link_to "/" do %>
       <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
     <% end %>
-    <form method="get" action="/search" id="search">
-      <input name="q" type="text" size="40" placeholder="Search..." />
-    </form>
     <div class="navbar-arthropocene-pusher"></div>
     <% if user_signed_in? %>
       <div class= "links">
@@ -41,10 +38,11 @@
         </div>
       </div>
     <% else %>
-      <div class= "links">
-        <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      </div>
+    <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
     <% end %>
+    <form method="get" action="/search" id="search" class="navbar-arthropocene-item">
+      <input name="q" type="text" size="40" placeholder="Search..." class="input-search" />
+    </form>
   </div>
 </nav>

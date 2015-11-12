@@ -11,19 +11,10 @@
 
   </head>
   <body>
-    <div id ="wrapper" class="col-xs-12">
-      <div id="header" class="col-xs-12">
-        <%= render 'shared/navbar' %>
-        <%= render 'shared/flashes' %>
-      </div>
-      <div id="content" class="col-xs-12">
-        <%= yield %>
-      </div>
-
-      <div id="footer" class-"col-xs-12">
-        <%= render 'shared/footer' %>
-      </div>
-    </div>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

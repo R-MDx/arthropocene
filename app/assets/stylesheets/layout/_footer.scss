@@ -1,8 +1,7 @@
 div#siteInfo {
-  height: 190px;
   text-align: center;
-  color: black;
-  padding-top: 95px;
+  color: white !important;
+  margin-top: -50px;
 
   // background-color: #27272B;
 
@@ -10,9 +9,4 @@ div#siteInfo {
     vertical-align:middle;
     display:inline-block;
   }
-}
-
-div.back-to-top-nav {
-  text-align: center;
-  padding: 0.5em;
 }
