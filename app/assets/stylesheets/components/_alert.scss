@@ -6,9 +6,15 @@
   margin: 0;
   text-align: center;
   color: white;
+  position: fixed;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  top: 100px;
+  z-index: 10;
 }
 .alert-info {
-  background: $green;
+  background: $blue;
 }
 .alert-warning {
   background: $red;

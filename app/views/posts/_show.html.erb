@@ -1,14 +1,15 @@
 <div class="post-frame" id="post-<%= post.id %>">
 
   <div class="post-frame-title">
-    <h1><%= post.title %></h1>
+    <h2><%= post.title %></h2>
   </div>
 
-  <%= image_tag post.picture.url(:medium) %>
+  <div class="post-frame-banner" style="background-image: url('<%= post.picture.url(:medium)%>')">
+    <p><%= post.description %></p>
+  </div>
 
   <div class="post-frame-story">
-    <h2><%= post.description %></h2>
-    <h2><%= post.story %></h2>
+    <p><%= post.story %></p>
   </div>
 
   <div class="post-frame-comment">
@@ -26,10 +27,21 @@
         <%= link_to "Login or register to comment!", new_user_session_path %>
       <% end %>
   </div>
+  <% if user_signed_in? %>
+    <% if post.user_id == current_user.id %>
+      <ul class="list-inline controls-list">
+        <li>
+        <%= link_to edit_user_post_path(current_user.id, post.id), class: "control-icon" do %>
+          <i class="fa fa-pencil"></i>
+        <% end %>
+        </li>
+        <li>
+        <%= link_to user_post_path(current_user.id, post.id), method: :delete, class: "control-icon" do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
 </div>
 
-<% if user_signed_in? %>
-  <% if post.user_id == current_user.id %>
-    <%= link_to "Delete Your Post", user_post_path(current_user.id, post.id), method: :delete %>
-  <% end %>
-<% end %>

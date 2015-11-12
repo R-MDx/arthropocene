@@ -1,20 +1,16 @@
 div#siteInfo {
-  height: 190px;
   text-align: center;
-  color: black;
-  // background-color: #27272B;
+  color: white;
+  margin-top: -50px;
 
-  span{
-    line-height:95px;
-  }
+  // background-color: #27272B;
 
   div.footerBlocks{
     vertical-align:middle;
     display:inline-block;
   }
-}
-
-div.back-to-top-nav {
-  text-align: center;
-  padding: 0.5em;
+  &.footer-logged {
+    margin-top: 20px;
+    color: black;
+  }
 }

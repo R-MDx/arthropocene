@@ -1,20 +1,16 @@
-<nav class="navbar-arthropocene">
+<% if user_signed_in? %>
+  <nav class="navbar-arthropocene navbar-arthropocene-white navbar-arthropocene-fixed">
+<% else %>
+  <nav class="navbar-arthropocene navbar-arthropocene-fixed">
+<% end %>
   <div class="container navbar-arthropocene-container">
    <%= link_to "/" do %>
       <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
     <% end %>
     <div class="navbar-arthropocene-pusher"></div>
     <% if user_signed_in? %>
-      <div class= "links">
-        <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-        <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      </div>
-<!--       <%= link_to "#", class: "navbar-arthropocene-item navbar-arthropocene-link hidden-xs" do %>
-        <div class="icon-badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="icon-badge icon-badge-blue">3</div>
-        </div>
-      <% end %> -->
+      <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-arthropocene-item navbar-arthropocene-link" %>
       <div class="navbar-arthropocene-item">
         <div class="dropdown">
           <%= image_tag "colours.png", class: "avatar dropdown-toggle", id: "navbar-arthropocene-menu", "data-toggle" => "dropdown" %>
@@ -38,13 +34,11 @@
         </div>
       </div>
     <% else %>
-      <div class= "links">
-        <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      </div>
+      <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
     <% end %>
-   <form method="get" action="/search" id="search">
-      <input name="q" type="text" size="40" placeholder="Search..." />
+    <form method="get" action="/search" id="search" class="navbar-arthropocene-item">
+      <input name="q" type="text" size="40" placeholder="Search..." class="input-search" />
     </form>
   </div>
 </nav>
