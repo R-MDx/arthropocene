@@ -20,7 +20,7 @@ User.create(
     password: Faker::Internet.password(8)
   )
   user.save
-  5.times do
+  2.times do
     Post.create(
       title: Faker::Lorem.sentence(1),
       description: Faker::Lorem.sentence(2),
