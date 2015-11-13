@@ -21,7 +21,7 @@
     font-weight: bold;
     letter-spacing: 3.5px;
     position:relative;
-    background:url('1edited.jpg');
+    background: image-url('1edited.jpg');
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-position: center;
@@ -46,7 +46,7 @@
   .home-title {
     h1 {
       font-size: 3em;
-      background:url('2edited.jpg');
+      background: image-url('2edited.jpg');
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       -webkit-text-fill-position: center;
