@@ -45,7 +45,9 @@
           </div>
         </div>
       <% else %>
-        <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
+        <% end %>
       <% end %>
     </div>
     <div class="navbar-arthropocene-sitesearch">
