@@ -8,9 +8,9 @@
   text-align: center;
   color: white;
   position: fixed;
-  width: 100%;
-  // left: 50%;
-  // margin-left: -100px;
+  width: 650px;
+  left: 50%;
+  margin-left: -325px;
   top: 80px;
   z-index: 10;
 }
@@ -24,5 +24,8 @@
   // background: $red;
   background: transparent;
   border: none;
-
+}
+.alert-danger {
+  background: transparent;
+  border: none;
 }

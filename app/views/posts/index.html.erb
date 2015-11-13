@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <% if @posts.empty? %>
-          <h2>No posts to display</h2>
+          <h2>Discover yourself through art</h2>
         <% else %>
           <% @posts.each do |post| %>
             <%= render 'posts/show', post: post %>
           <% end %>
         <% end %>
         <div class="text-center">
-          <%= link_to "Create new post", new_user_post_path(current_user.id), class: "btn btn-primary" %>
+          <%= link_to "Express yourself", new_user_post_path(current_user.id), class: "btn btn-primary" %>
         </div>
       </div>
     </div>
