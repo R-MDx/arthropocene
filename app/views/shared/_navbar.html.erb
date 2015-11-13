@@ -4,41 +4,54 @@
   <nav class="navbar-arthropocene navbar-arthropocene-fixed">
 <% end %>
   <div class="container navbar-arthropocene-container">
-   <%= link_to "/" do %>
-      <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
-    <% end %>
-    <div class="navbar-arthropocene-pusher"></div>
     <% if user_signed_in? %>
-      <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      <div class="navbar-arthropocene-item">
-        <div class="dropdown">
-          <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-arthropocene-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-arthropocene-dropdown-menu">
-            <li>
-              <%= link_to user_path(current_user.id) do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to user_posts_path(current_user.id) do %>
-                <i class="fa fa-sticky-note"></i>  <%= t ".profile", default: "Posts" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+      <div class="navbar-arthropocene-navigation">
+        <%= link_to t(".top_call_to_action", default: "Public Posts"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+        <%= link_to t(".top_call_to_action", default: "New Post"), new_user_post_path(current_user.id), class: "navbar-arthropocene-item navbar-arthropocene-link" %>
       </div>
     <% else %>
-      <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      <div class="navbar-arthropocene-navigation">
+        <%= link_to t(".posts", default: "Explore"), public_posts_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-arthropocene-item navbar-arthropocene-link" %>
+      </div>
     <% end %>
-    <form method="get" action="/search" id="search" class="navbar-arthropocene-item">
-      <input name="q" type="text" size="40" placeholder="Search..." class="input-search" />
-    </form>
+    <div class="navbar-arthropocene-sitelogo">
+      <% if user_signed_in? %>
+        <div class="navbar-arthropocene-item">
+          <div class="dropdown">
+            <%= image_tag "logo.png", class: "avatar dropdown-toggle", id: "navbar-arthropocene-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-arthropocene-dropdown-menu">
+              <li>
+                <%= link_to root_path do %>
+                  <i class="fa fa-home"></i> <%= t ".home", default: "Home" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to user_path(current_user.id) do %>
+                  <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to user_posts_path(current_user.id) do %>
+                  <i class="fa fa-sticky-note"></i>  <%= t ".profile", default: "Posts" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <%= image_tag "logo.png", class: "navbar-arthropocene-color-logo" %>
+      <% end %>
+    </div>
+    <div class="navbar-arthropocene-sitesearch">
+      <form method="get" action="/search" id="search" class="navbar-arthropocene-item">
+        <input name="q" type="text" size="40" placeholder="Search..." class="input-search" />
+      </form>
+    </div>
   </div>
 </nav>

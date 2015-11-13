@@ -10,7 +10,7 @@
           <%= form.input :picture %>
           <%= form.input :description, placeholder: "A telescop built by a psychologist" %>
           <%= form.input :story, placeholder: "Here is how it begins.."  %>
-          <%= form.button :submit, "Create it buddy", class: "btn btn-primary" %>
+          <%= form.button :submit, params[:action] =='new' ? 'Create' : 'Edit', class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>

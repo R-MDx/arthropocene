@@ -1,0 +1,12 @@
+.public_posts {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)) no-repeat center center fixed, url('mountain.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.posts-wrapper {
+  padding: 200px 0;
+  color: white;
+}
