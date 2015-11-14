@@ -10,5 +10,9 @@ div#siteInfo {
   &.footer-logged {
     margin-top: 20px;
     color: black;
+
+    &-white {
+      color: white;
+    }
   }
 }

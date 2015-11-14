@@ -20,7 +20,8 @@
     }
   }
   .avatar {
-    width: 60px;
+    border-radius: 0;
+    width: 50px;
   }
   &-fixed {
     position: fixed;
@@ -33,7 +34,7 @@
    &-color-logo {
     // flex: 1 1 auto;
     width: 50px;
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: pointer;
   }
 
@@ -156,12 +157,6 @@
   }
 }
 
-.links {
-  padding: auto;
-  width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
 .input-search {
   outline: none;
   line-height: 22px;

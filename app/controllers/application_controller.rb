@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(user)
-    public_posts_path
+   user_path(current_user.id)
   end
 
   def after_sign_out_path_for(user)

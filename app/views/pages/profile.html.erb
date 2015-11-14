@@ -1,22 +1,29 @@
-<div class="posts-wrapper">
+<div id="user">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <div id="user">
+        <div class="profile-details">
+          <%= image_tag current_user.picture, class: "user-image" %>
           <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-
+          <h3><%= current_user.email %></h3>
           <% if current_user.posts.blank? %>
-            <%= link_to t(".top_call_to_action", default: "Express Yourself"), new_user_post_path(current_user.id), class: "btn btn-primary self-express " %>
-          <% else %>
-            <% @current_user.posts.each do |post| %>
-              <%= render 'posts/post_for_profile', post: post %>
-            <% end %>
+            <%= link_to t(".top_call_to_action", default: "Express Yourself"), new_user_post_path(current_user.id), class: "btn btn-primary self-express" %>
           <% end %>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <% if !current_user.posts.blank? %>
+          <div class="posts-wrapper">
+            <% current_user.posts.each do |post| %>
+              <%= render 'posts/show', post: post, comment: @comment %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
 
 

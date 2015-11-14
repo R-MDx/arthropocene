@@ -6,13 +6,44 @@
 }
 
 #user {
-  height: 100vh;
 
-  h2 {
+  .profile-details {
+    height: 98vh;
     text-align: center;
+    color: white;
   }
 
-  .slef-express {
+  h2 {
+    position: absolute;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    top: 50%;
+    margin: 0;
+  }
+  h3 {
+    position: absolute;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200;
+    top: 58%;
+    margin: 0;
+  }
+
+  .self-express {
+    position: absolute !important;
+    left: 35% !important;
+    right: 35% !important;
+    top: 70% !important;
+
+  }
+  .user-image {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 200px;
+    border-radius: 8em;
 
   }
 }
+
