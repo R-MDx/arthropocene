@@ -1,5 +1,9 @@
 .form-wrapper {
-  padding: 100px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), image-url('mountain.jpg');
+  background-size: cover;
+  height: 91vh;
+  padding-top: 58px;
+  color: white;
   h1 {
     font-size: 25px;
   }

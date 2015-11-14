@@ -15,8 +15,8 @@ class PostsController < ApplicationController
       flash[:notice] = "Post saved successfully"
       redirect_to user_posts_path
     else
-      flash[:alert] = "Error occured while attempting to save post!"
-      redirect_to user_posts_path
+      flash[:alert] = "No fields can be empty"
+      redirect_to new_user_post_path(current_user.id)
     end
   end
 

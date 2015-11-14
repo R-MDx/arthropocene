@@ -17,6 +17,11 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
         <button type="submit" class="float" name="commit" value="Log in">Login</button>
+        <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <%= link_to "Use #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+          <% end -%>
+        <% end -%>
       <% end %>
     </div>
     <div class="login-links text-center">

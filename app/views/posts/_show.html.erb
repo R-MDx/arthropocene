@@ -1,11 +1,11 @@
 <div class="post-frame" id="post-<%= post.id %>">
 
   <div class="post-frame-title">
-    <h2><%= post.title %></h2>
+    <h2><%= post.title.upcase %></h2>
   </div>
 
   <div class="post-frame-banner" style="background-image: url('<%= post.picture.url(:medium)%>')">
-    <p><%= post.description %></p>
+    <p><%= post.description.downcase %></p>
   </div>
 
   <div class="post-frame-story">
