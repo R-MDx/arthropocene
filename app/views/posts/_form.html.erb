@@ -4,7 +4,7 @@
       <div class="col-xs-12 col-md-6 col-md-offset-3">
         <h1 class="text-center"><%= params[:action] == "new" ? "Create" : "Edit" %> your piece of art</h1>
 
-        <%= simple_form_for([current_user ,post]) do |form| %>
+        <%= simple_form_for([ current_user ,post ]) do |form| %>
           <%= form.error_notification %>
           <%= form.input :title, placeholder: "Solitude & Stars" %>
           <%= form.input :picture %>

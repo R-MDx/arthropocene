@@ -5,43 +5,31 @@
 }
 
 #user {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 
   .profile-details {
-    height: 91vh;
     text-align: center;
     color: white;
+
+    .user-image {
+      width: 200px;
+      border-radius: 8em;
+    }
   }
 
   h2 {
-    position: absolute;
-    text-align: center;
     font-size: 40px;
     font-weight: 300;
-    top: 55%;
-    margin: 0;
+    margin: 20px;
   }
   h3 {
-    position: absolute;
-    text-align: center;
     font-size: 24px;
     font-weight: 200;
-    top: 63%;
-    margin: 0;
-  }
-
-  .self-express {
-    position: absolute !important;
-    left: 35% !important;
-    right: 35% !important;
-    top: 75% !important;
-
-  }
-  .user-image {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 200px;
-    border-radius: 8em;
+    margin: 20px;
   }
 }
 

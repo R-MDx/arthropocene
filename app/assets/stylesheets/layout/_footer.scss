@@ -8,11 +8,14 @@ div#siteInfo {
     display:inline-block;
   }
   &.footer-logged {
-    margin-top: 20px;
     color: white;
 
     &-white {
       color: white;
     }
+  }
+
+  p {
+    margin: 0;
   }
 }
