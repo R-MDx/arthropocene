@@ -11,12 +11,6 @@
     flex: 0 1 auto;
   }
 
-  &-white {
-    background: white;
-    .navbar-arthropocene-item {
-      color: black !important;
-    }
-  }
   .avatar {
     border-radius: 0;
     width: 50px;
@@ -142,14 +136,6 @@
       border-top: 1px solid #E6E6E6;
     }
   }
-
-  hr {
-    height: 12px;
-    width: 1px;
-    background-color: rgba(0, 0, 0, 0.2);
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 }
 
 .input-search {
@@ -177,3 +163,33 @@
   width: 250px;
 }
 
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 560px) {
+  .navbar-arthropocene-sitesearch{
+    display: none;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .navbar-arthropocene-sitesearch{
+    display: none;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+  .navbar-arthropocene-sitesearch{
+    display: none;
+  }
+}
+
+@media only screen and (max-width : 290px) {
+  .navbar-arthropocene-sitesearch{
+    display: none;
+  }
+  .navbar-arthropocene-sitelogo {
+    display: none;
+  }
+}

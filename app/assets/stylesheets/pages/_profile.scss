@@ -6,18 +6,19 @@
 
 #user {
   height: 100vh;
+  padding-top: 10px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   text-align: center;
 
   .profile-details {
-    text-align: center;
     color: white;
 
-    .user-image {
-      width: 200px;
-      border-radius: 8em;
+    .user-image-canvas {
+      .user-image {
+        width: 200px;
+        border-radius: 50px;
+      }
     }
   }
 

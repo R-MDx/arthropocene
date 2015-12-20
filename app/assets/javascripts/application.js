@@ -6,14 +6,14 @@
 
 $(document).ready(function(){
   $(window).on("scroll", function(){
-    if ($(this).scrollTop() > 100) {
+    if ($(this).scrollTop() > 65) {
       $(".navbar-arthropocene").css("top", "-80px");
     } else {
       $(".navbar-arthropocene").css("top", "0px");
     }
   });
 
-  var filters = ["perpetua", "reyes", "xpro2", "toaster"];
+  var filters = ["perpetua", "reyes", "xpro2"];
   var randFilter = filters[Math.floor(Math.random() * filters.length)];
   $(".post-frame-banner").on("mouseenter", function(){
     $(this).addClass(randFilter);
