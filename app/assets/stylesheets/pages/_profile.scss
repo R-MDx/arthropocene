@@ -1,12 +1,12 @@
 .show {
-  width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)) no-repeat center center fixed, image-url('mountain.jpg') no-repeat center center fixed;
   background-size: cover;
+  height: 100vh;
 }
 
 #user {
-  height: 100vh;
-  padding-top: 10px;
+  position: relative;
+  padding: 150px 0;
   display: flex;
   align-items: center;
   text-align: center;
@@ -16,21 +16,20 @@
 
     .user-image-canvas {
       .user-image {
-        width: 200px;
-        border-radius: 50px;
+        height: 200px;
+        border-radius: 20px;
       }
     }
   }
 
   h2 {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 300;
-    margin: 20px;
   }
   h3 {
     font-size: 24px;
-    font-weight: 200;
-    margin: 20px;
+    font-weight: 300;
+    margin: 20px 0 25px 0;
   }
 }
 

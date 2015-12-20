@@ -37,10 +37,13 @@
   to { background-position: 1500%; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 885px) {
+  .buttons {
+    margin-top: 20px !important;
+  }
   .home-title {
     h1 {
-      font-size: 3em;
+      font-size: 4.5em;
       background: image-url('2edited.jpg');
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
@@ -55,7 +58,39 @@
     to { background-position: 0%; }
   }
 }
-
+@media (max-width : 565px) {
+  .home-title {
+    h1 {
+      font-size: 3.5em;
+      background: image-url('2edited.jpg');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-position: center;
+    }
+  }
+  @keyframes animatedBackground {
+    from { background-position: 1100%; }
+    to { background-position: 0%; }
+  }
+}
+@media (max-width : 464px) {
+  .home-title {
+    h1 {
+      font-size: 2.5em;
+      background: image-url('2edited.jpg');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-position: center;
+    }
+    p {
+      font-size: 0.8em;
+    }
+  }
+  @keyframes animatedBackground {
+    from { background-position: 1100%; }
+    to { background-position: 0%; }
+  }
+}
 
 .buttons {
   margin-top: 80px;

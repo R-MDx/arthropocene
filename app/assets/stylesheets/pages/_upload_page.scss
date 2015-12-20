@@ -3,3 +3,9 @@
   background-size: cover;
   height: 100vh;
 }
+
+@media (max-height : 666px) {
+  #upload-page {
+    height: 100%;
+  }
+}

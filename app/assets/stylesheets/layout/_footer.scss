@@ -1,21 +1,6 @@
 div#siteInfo {
+  position: relative;
   text-align: center;
   color: white;
   margin-top: -50px;
-
-  div.footerBlocks{
-    vertical-align:middle;
-    display:inline-block;
-  }
-  &.footer-logged {
-    color: white;
-
-    &-white {
-      color: white;
-    }
-  }
-
-  p {
-    margin: 0;
-  }
 }

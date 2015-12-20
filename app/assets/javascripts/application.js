@@ -6,7 +6,7 @@
 
 $(document).ready(function(){
   $(window).on("scroll", function(){
-    if ($(this).scrollTop() > 65) {
+    if ($(this).scrollTop() > 60) {
       $(".navbar-arthropocene").css("top", "-80px");
     } else {
       $(".navbar-arthropocene").css("top", "0px");

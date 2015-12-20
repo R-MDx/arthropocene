@@ -13,6 +13,10 @@
         </div>
       </div>
     </div>
-    <%= link_to t(".top_call_to_action", default: "Express Yourself"), new_user_post_path(current_user.id), class: "btn btn-primary self-express" %>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to t(".top_call_to_action", default: "Express Yourself"), new_user_post_path(current_user.id), class: "btn btn-primary self-express" %>
+      </div>
+    </div>
   </div>
 </div>
